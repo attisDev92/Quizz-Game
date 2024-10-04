@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseURL = 'http://127.0.0.1:3002/api'
+const baseURL = import.meta.env.VITE_BACKEND_URI
 
 export const getAllPlayersService = async () => {
   const response = await axios.get(`${baseURL}/players`)
