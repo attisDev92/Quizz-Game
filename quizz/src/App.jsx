@@ -19,7 +19,7 @@ const App = () => {
       </Routes>
 
       <nav className='menu'>
-        <Link to='/new_player'>Nuevo juegador</Link>
+        <Link to='/new_player'>Nuevo jugador</Link>
         <Link to='/new_game'>Nuevo juego</Link>
         <Link to='/scores'>Resultados</Link>
       </nav>
