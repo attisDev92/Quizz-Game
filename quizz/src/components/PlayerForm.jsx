@@ -4,6 +4,7 @@ import { createPlayer } from '../redux/playerReducer'
 import { useNavigate } from 'react-router-dom'
 import { setNotification } from '../redux/notificationReducer'
 import { timeNotification } from '../config/globalVar'
+import logo from '../assets/Logo.png'
 
 const PlayerForm = () => {
   const dispatch = useDispatch()
@@ -34,6 +35,7 @@ const PlayerForm = () => {
 
   return (
     <form onSubmit={handleOnSubmit} className='form' >
+      <legend>NUEVO JUGADOR</legend>
       <input id='name' {...name.input} placeholder='Nombre y Apellido'/>
       <br />
       <input id='phone' {...phone.input} placeholder='Teléfono'/>
@@ -41,6 +43,7 @@ const PlayerForm = () => {
       <input id='email' {...email.input} placeholder='E-mail'/>
       <br />
       <button type='submit'>Iniciar partida</button>
+      <img src={logo} />
     </form>
   )
 }

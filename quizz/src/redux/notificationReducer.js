@@ -30,7 +30,7 @@ export const setNotification = (message, style) => {
     dispatch(activeNotification(message, style))
     setTimeout(() => {
       dispatch(desactiveNotification())
-    }, 3000)
+    }, 5000)
   }
 }
 

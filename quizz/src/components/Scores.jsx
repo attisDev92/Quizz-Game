@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import { getAllPlayersService } from '../services'
+import logo from '../assets/Logo.png'
+import back from '../assets/back_question.png'
 
 const Scores = () => {
   const [players, setPlayers] = useState([])
@@ -25,16 +27,20 @@ const Scores = () => {
 
   return (
     <div className='scores'>
-      <h2>Top resultados</h2>
-      <table>
-        {playersScore.map((player, i) => (
-          <tr key={player.id}>
-            <td>{i + 1}</td>
-            <td>{player.name}</td>
-            <td>{player.score}</td>
-          </tr>
-        ))}
-      </table>
+      <img src={logo} />
+      <h2>TOP RESULTADOS</h2>
+      <div className='container__table'>
+        <table>
+          {playersScore.map((player, i) => (
+            <tr key={player.id}>
+              <td>{i + 1}</td>
+              <td>{player.name}</td>
+              <td>{player.score}</td>
+            </tr>
+          ))}
+        </table>
+        <img src={back} />
+      </div>
     </div>
   )
 }

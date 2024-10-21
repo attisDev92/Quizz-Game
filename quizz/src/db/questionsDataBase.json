@@ -48,39 +48,12 @@
     ]
   },
   {
-    "ask": "¿Cuál de las siguientes no es una función de la firma electrónica cualificada en Ecuador?",
-    "answers": [
-      {"res": "Probar la identidad del firmante", "correct": false },
-      {"res": "Modificar automáticamente el contenido del documento", "correct": true },
-      {"res": "Garantizar la integridad del documento firmado", "correct": false },
-      {"res": "Asegurar la autenticidad de la firma", "correct": false }
-    ]
-  },
-  {
-    "ask": "¿Qué es el Reglamento eIDAS mencionado por ANF AC?",
-    "answers": [
-      {"res": "Un tratado internacional sobre comercio", "correct": false},
-      {"res": "Un reglamento europeo sobre firmas electrónicas y servicios de confianza", "correct": true},
-      {"res": "Un manual sobre criptomonedas", "correct": false},
-      {"res": "Un conjunto de leyes de Ecuador sobre seguridad informática", "correct": false}
-    ]
-  },
-  {
     "ask": "¿Cuál de los siguientes es un beneficio de usar una firma electrónica cualificada en Ecuador?",
     "answers": [
       {"res": "Aumenta el tamaño del archivo", "correct": false }, 
       {"res": "Garantiza la autenticidad y seguridad jurídica del documento", "correct": true }, 
       {"res": "Evita que los documentos se puedan leer", "correct": false }, 
       {"res": "Elimina la necesidad de cifrar la información", "correct": false }
-    ]
-  },
-  {
-    "ask": "¿Cuál de los siguientes sectores en Ecuador no es un usuario típico del servicio de validación cualificada?",
-    "answers": [
-      {"res": "Sector bancario", "correct": false},
-      {"res": "Sector salud", "correct": false},
-      {"res": "Educación", "correct": false},
-      {"res": "Restaurantes de comida rápida", "correct": true}
     ]
   },
   {
@@ -93,138 +66,12 @@
     ]
   },
   {
-    "ask": "¿A qué se refiere el término \"interoperabilidad\" en el contexto de la firma electrónica?",
-    "answers": [
-      {"res": "La capacidad de las firmas electrónicas para funcionar solo en una plataforma específica", "correct": false},
-      {"res": "La capacidad de las firmas electrónicas para ser verificadas en múltiples jurisdicciones y países", "correct": true},
-      {"res": "El uso exclusivo de software propietario", "correct": false},
-      {"res": "La verificación de firmas electrónicas solo dentro de una empresa", "correct": false}
-    ]
-  },
-  {
     "ask": "¿Cuál es el principal riesgo de no validar una firma electrónica en Ecuador?",
     "answers": [
       {"res": "El documento se vuelve ilegible", "correct": false},
       {"res": "El documento pierde validez legal", "correct": true},
       {"res": "El documento se destruye automáticamente", "correct": false},
       {"res": "El documento no se puede imprimir", "correct": false}
-    ]
-  },
-  {
-    "ask": "¿Cuál de las siguientes es una modalidad ofrecida por ANF AC para la validación de firmas electrónicas?",
-    "answers": [
-      {"res": "Modalidad Offline", "correct": false},
-      {"res": "Modalidad API", "correct": true},
-      {"res": "Modalidad Manual", "correct": false},
-      {"res": "Modalidad Blockchain", "correct": false}
-    ]
-  },
-  {
-    "ask": "¿Qué autoridad ecuatoriana tiene el poder de sancionar a las empresas que incumplen con la Ley de Firmas Electrónicas?",
-    "answers": [
-      {"res": "Banco Central del Ecuador", "correct": false},
-      {"res": "Agencia de Regulación y Control de las Telecomunicaciones (ARCOTEL)", "correct": true},
-      {"res": "Ministerio de Salud", "correct": false},
-      {"res": "Registro Civil", "correct": false}
-    ]
-  },
-  {
-    "ask": "¿Cuál es el estándar internacional que regula los procedimientos de validación de firmas electrónicas cualificadas, y que es seguido por ANF AC?",
-    "answers": [
-      {"res": "ISO 27001", "correct": false},
-      {"res": "ETSI TS 119 102-2", "correct": true},
-      {"res": "NSI X9.95", "correct": false},
-      {"res": "SOC 2", "correct": false}
-    ]
-  },
-  {
-    "ask": "¿Cuál de las siguientes afirmaciones es incorrecta respecto al uso de certificados electrónicos cualificados en Ecuador?",
-    "answers": [
-      {"res": "Un certificado electrónico cualificado garantiza la autenticidad de la firma.", "correct": false},
-      {"res": "Un certificado electrónico cualificado puede ser emitido por cualquier empresa que tenga conocimientos de tecnología.", "correct": true},
-      {"res": "Un certificado electrónico cualificado permite identificar a la persona que firma un documento.", "correct": false},
-      {"res": "La revocación de un certificado puede ser solicitada por el titular del mismo en cualquier momento.", "correct": false}
-    ]
-  },
-  {
-    "ask": "¿Qué característica distingue a la firma electrónica cualificada de otras firmas electrónicas?",
-    "answers": [
-      {"res": "La firma cualificada puede realizarse con cualquier dispositivo móvil.", "correct": false},
-      {"res": "La firma cualificada requiere un certificado emitido por una Autoridad de Certificación acreditada.", "correct": true},
-      {"res": "La firma cualificada se realiza únicamente a través de correos electrónicos.", "correct": false},
-      {"res": "La firma cualificada no puede ser utilizada en documentos de carácter legal.", "correct": false}
-    ]
-  },
-  {
-    "ask": "¿Cuál de los siguientes aspectos es evaluado en un informe de validación emitido por ANF AC?",
-    "answers": [
-      {"res": "El tiempo que se tardó en firmar el documento", "correct": false},
-      {"res": "La autoridad que emitió el certificado", "correct": true},
-      {"res": "El tamaño del archivo firmado", "correct": false},
-      {"res": "El dispositivo utilizado para crear el documento", "correct": false}
-    ]
-  },
-  {
-    "ask": "¿Qué ocurre si un certificado electrónico cualificado ha sido revocado en Ecuador?",
-    "answers": [
-      {"res": "El documento firmado antes de la revocación sigue siendo válido.", "correct": true},
-      {"res": "Todos los documentos firmados con ese certificado son inválidos, incluso los firmados antes de la revocación.", "correct": false},
-      {"res": "El documento firmado se bloquea automáticamente.", "correct": false},
-      {"res": "Se invalida únicamente el último documento firmado.", "correct": false}
-    ]
-  },
-  {
-    "ask": "En Ecuador, la Ley de Comercio Electrónico establece que los documentos firmados electrónicamente tienen la misma validez que los firmados manualmente, siempre que:",
-    "answers": [
-      {"res": "La firma haya sido realizada con una herramienta de pago.", "correct": false},
-      {"res": "La firma haya sido realizada en presencia de un notario.", "correct": false},
-      {"res": "La firma esté respaldada por un certificado electrónico emitido por una autoridad acreditada.", "correct": true},
-      {"res": "El documento sea impreso y firmado físicamente después de la firma electrónica.", "correct": false}
-    ]
-  },
-  {
-    "ask": "En el contexto del servicio ofrecido por ANF AC, ¿qué es un sello de tiempo?",
-    "answers": [
-      {"res": "Una marca que registra el tiempo exacto en que se firmó un documento.", "correct": true},
-      {"res": "Un código para acceder a documentos firmados.", "correct": false},
-      {"res": "Una contraseña temporal para autenticar al firmante.", "correct": false},
-      {"res": "Un mecanismo de cifrado para proteger documentos en tránsito.      ", "correct": false}
-    ]
-  },
-  {
-    "ask": "¿Cuál es uno de los principales desafíos que enfrenta la transformación digital en Ecuador?",
-    "answers": [
-      {"res": "Falta de legislación en firmas electrónicas", "correct": false},
-      {"res": "Bajo acceso a internet en zonas rurales", "correct": true},
-      {"res": "Falta de disponibilidad de software de código abierto", "correct": false},
-      {"res": "Regulaciones excesivas en criptomonedas      ", "correct": false}
-    ]
-  },
-  {
-    "ask": "¿Qué requisito debe cumplir una Autoridad de Certificación (AC) en Ecuador para ser reconocida como tal?",
-    "answers": [
-      {"res": "Poseer un capital mínimo de 10 millones de dólares.", "correct": false},
-      {"res": "Estar acreditada por ARCOTEL y cumplir con las normativas vigentes.", "correct": true},
-      {"res": "Tener oficinas en al menos cinco provincias del país.", "correct": false},
-      {"res": "Estar registrada como empresa de telecomunicaciones.", "correct": false}
-    ]
-  },
-  {
-    "ask": "¿Cuál es una de las ventajas clave de implementar la firma electrónica en procesos gubernamentales en Ecuador?",
-    "answers": [
-      {"res": "Aumenta los costos administrativos.", "correct": false},
-      {"res": "Reduce la necesidad de infraestructura física para gestionar documentos.", "correct": true},
-      {"res": "Limita el acceso a información pública.", "correct": false},
-      {"res": "Genera duplicados automáticos de documentos firmados.", "correct": false}
-    ]
-  },
-  {
-    "ask": "¿Qué organismo en Ecuador debe garantizar la interoperabilidad de las firmas electrónicas emitidas por diferentes Autoridades de Certificación?",
-    "answers": [
-      {"res": "Superintendencia de Bancos", "correct": false},
-      {"res": "Servicio de Rentas Internas (SRI)", "correct": false},
-      {"res": "Agencia de Regulación y Control de las Telecomunicaciones (ARCOTEL)", "correct": true},
-      {"res": "Fiscalía General del Estado", "correct": false}
     ]
   }
 ]

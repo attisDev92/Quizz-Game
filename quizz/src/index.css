@@ -1,10 +1,120 @@
 @import url(reset.css);
+@font-face {
+  font-family: Biennale;
+  src: url('../public/fonts/Biennale\ Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: Biennale;
+  src: url('../public/fonts/Biennale\ Black\ It.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: Biennale;
+  src: url('../public/fonts/Biennale\ Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: Biennale;
+  src: url('../public/fonts/Biennale\ Book.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Biennale;
+  src: url('../public/fonts/Biennale\ Book\ It.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: Biennale;
+  src: url('../public/fonts/Biennale\ Hair.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: Biennale;
+  src: url('../public/fonts/Biennale\ Hair\ It.otf') format('opentype');
+  font-weight: 100;
+  font-style: italic;
+}
+@font-face {
+  font-family: Biennale;
+  src: url('../public/fonts/Biennale\ Heavy.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: Biennale;
+  src: url('../public/fonts/Biennale\ Heavy\ It.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: Biennale;
+  src: url('../public/fonts/Biennale\ Light.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: Biennale;
+  src: url('../public/fonts/Biennale\ Light\ It.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: Biennale;
+  src: url('../public/fonts/Biennale\ Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: Biennale;
+  src: url('../public/fonts/Biennale\ Medium\ It.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: Biennale;
+  src: url('../public/fonts/Biennale\ Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Biennale;
+  src: url('../public/fonts/Biennale\ Regular\ It.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: Biennale;
+  src: url('../public/fonts/Biennale\ SemiBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: Biennale;
+  src: url('../public/fonts/Biennale\ SemiBold\ It.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+:root {
+  --primary-color: #8e1547; 
+  --secondary-color: #922a5c;
+  --light-color: #b24d7d;
+  --gray-color: #838788;
+  --with-color: #fff;
+}
 
 body {
   margin: 0; 
   padding: 0;
-  color: aliceblue;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: var(--with-color);
+  font-family: Biennale;
   padding-bottom: 30%;
 }
 
@@ -13,7 +123,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  filter: blur(7px) brightness(0.9) contrast(0.9);
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -23,17 +132,23 @@ body {
 }
 
 .background img {
-  height: 100%;
+  width: 100%;
   object-fit: cover;
 }
 
-/* Título */
-.title {
-  margin: 10% auto;
-  width: 50%;
+/* Inicio */
+.inicio h1 {
+  margin: 50% auto 10%;
+  width: 100%;
   text-align: center;
   text-shadow: black 2px 2px;
-  font-size: 3rem;
+  font-weight: bold;
+  font-size: 6rem;
+}
+
+.inicio img {
+  width: 50%;
+  margin: auto;
 }
 
 /* menu */
@@ -53,12 +168,13 @@ button {
   width: 300px; 
   padding: 10px;
   font-size: 25px;
+  font-weight: 600;
   text-transform: uppercase;
-  color: aliceblue;
+  color: var(--with-color);
   text-decoration: none;
   border-radius: 5px;
-  background-color: rgb(10, 68, 194);
-  box-shadow: 2px 2px 5px black;
+  background-color: var(--primary-color);
+  box-shadow: 2px 2px 5px var(--gray-color);
   transition: all ease-in-out 6ms;
 }
 
@@ -69,7 +185,6 @@ button:hover {
 }
 
 /* form */
-
 .form {
   display: flex;
   flex-flow: column nowrap;
@@ -78,7 +193,15 @@ button:hover {
   margin: 30%  auto;
   padding:40px  20px;
   align-items: center;
-  background-color: rgba(0, 0, 158, 0.279);
+  background-color: var(--light-color);
+}
+
+.form legend {
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 5px #8e1547;
+  margin: 1rem 0 3rem;
+
 }
 
 .form input {
@@ -95,6 +218,11 @@ button:hover {
   transition: all ease-in-out 6ms;
 }
 
+.form img {
+  width: 70%;
+  margin: 3rem;
+}
+
 /* game */
 .game__container {
   display: flex;
@@ -105,13 +233,14 @@ button:hover {
 }
 
 .question {
-  width: 100%;
-  padding: 2% 10%;
+  width: 150%;
+  padding: 20% 30% 10%;
   text-align: center;
   font-size: 3rem;
-  background-color: rgba(10, 68, 194, 0.536);
-  border-radius: 10px;
-  box-shadow: 2px 2px 5px black;
+  font-weight: 500;
+  background-color: var(--primary-color);
+  box-shadow: 0px 10px 20px var(--light-color);
+  border-radius: 0 0 100% 100%;
 }
 
 .answer__container {
@@ -121,8 +250,10 @@ button:hover {
   justify-content: center;
   align-items: center;
   font-size: 2.5rem;
-  margin: 3rem auto;
+  margin: 10% auto;
+  padding-inline: 5%;
   gap: 1rem;
+  width: 100%;
 }
 
 .label__container {
@@ -134,12 +265,12 @@ button:hover {
 }
 
 .answer__container label {
-  background-color: rgb(10, 68, 194);
+  background-color: var(--light-color);
   width: 100%;
   border-radius: 10px;
   padding: 1rem;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: aliceblue;
   cursor: pointer;
   box-shadow: 2px 2px 5px black;
@@ -147,8 +278,27 @@ button:hover {
 }
 
 .answer__container input[type="radio"]:checked + label {
-  background-color: rgba(10, 68, 194, 0.8);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+  background-color: var(--primary-color);
+  font-weight: 600;
+  scale: 1.05;
+}
+
+.game__logo {
+  width: 50%;
+}
+
+.game__container button {
+  padding: 1rem;
+  font-size: 2rem;
+  width: 60%;
+}
+
+.game__background {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 /* score */
@@ -157,27 +307,44 @@ button:hover {
   flex-flow: column nowrap;
   width: 100%;
   align-items: center;
-  padding: 5%;
+  padding: 20%;
   gap: 2rem;
-  background-color: rgba(10, 68, 194, 0.536);
 }
 
 .scores h2 {
   font-size: 3rem;
+  font-weight: 700;
+}
+
+.container__table {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  overflow: hidden;
+}
+
+.container__table img {
+  position: absolute;
+  top: 0;
+  z-index: -1;
 }
 
 .scores table {
   font-size: 2rem;
+  padding: 2rem;
+  color: var(--primary-color);
 }
 
 .scores tr {
-  background-color: rgba(0, 0, 0, 0.394);
+  background-color: rgba(183, 170, 170, 0.394);
 }
 
 .scores td {
   padding: 0 1rem;
 }
 
+/* notification */
 .notification {
   position: fixed;
   width: 100vw;
@@ -192,31 +359,27 @@ button:hover {
   background-color: rgba(0, 0, 0, 0.392);
 }
 
-.notification__container {
+.notification_content {
+  position: relative;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  width: 80%;
-  height: 30%;
+  width: 70%;
 }
 
-.notification__container p {
-  font-size: 2rem;
-  font-weight: 700;
+.notification_content img {
+  top: 0;
+  z-index: -2;
+  border-radius: 20px;
 }
 
-.warning .notification__container {
-  border: 10px solid midnightblue;
-  background-color: rgba(10, 68, 194, 0.8);
-}
-
-.error .notification__container{
-  border: 10px solid rgb(112, 25, 25);
-  background-color: rgba(251, 70, 57, 0.8);
-}
-
-.success .notification__container{
-  border: 10px solid rgb(25, 112, 25);
-  background-color: rgba(10, 194, 44, 0.8);
+.notification_content p {
+  position: absolute;
+  top: 40%;
+  margin: auto;
+  z-index: 1;
+  font-size: 5rem;
+  text-align: center;
+  font-weight: 800;
 }

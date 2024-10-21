@@ -3,19 +3,17 @@ import Scores from './components/Scores'
 import Game from './components/Game'
 import PlayerForm from './components/PlayerForm'
 import Notification from './components/Notification'
-import backgroundIMG from './assets/background.jpg'
+import backgroundIMG from './assets/background.png'
+import Start from './components/Start'
 const App = () => {
   return (
     <>
-      <h1 className='title'> Quién quiere ser millonario? by PROGRESS GROUP
-      </h1>
-
       <Notification />
       <Routes>
         <Route path='/scores' element={<Scores />} />
         <Route path='/new_game' element={<Game />} />
         <Route path='/new_player' element={<PlayerForm />} />
-        <Route path='/' element={<PlayerForm />} />
+        <Route path='/' element={<Start />} />
       </Routes>
 
       <nav className='menu'>

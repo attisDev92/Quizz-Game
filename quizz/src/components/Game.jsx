@@ -5,6 +5,8 @@ import { setNotification } from '../redux/notificationReducer'
 import { updatePlayerScore } from '../redux/playerReducer'
 import { useSetQuestions } from '../hooks/useQuestions'
 import { maxNumberQuestions, timeLimit, timeNotification } from '../config/globalVar'
+import logo from '../assets/Logo.png'
+import back from '../assets/back_question.png'
 
 const Game = () => {
   const navigate = useNavigate()
@@ -13,7 +15,7 @@ const Game = () => {
   const {questions} = useSetQuestions()
   const [numberQuestion, setNumberQuestion] = useState(1)
   const [selectedAnswer, setSelectedAnswer] = useState(null)
-  const [timer, setTimer] = useState(timeLimit)
+  const [_timer, setTimer] = useState(timeLimit)
   const [score, setScore] = useState(0)
 
   useEffect(() => {
@@ -23,7 +25,7 @@ const Game = () => {
           dispatch(
             setNotification({
               message: 'Se acabó el tiempo',
-              style: 'error',
+              style: 'time out',
             }),
           )
           setTimeout(() => {
@@ -41,12 +43,21 @@ const Game = () => {
   const handleNextQuestion = () => {
     if (numberQuestion === maxNumberQuestions) {
       dispatch(updatePlayerScore(player.id, score))
-      dispatch(
-        setNotification({
-          message: 'Juego finalizado',
-          style: 'warning',
-        }),
-      )
+      if (score === (maxNumberQuestions * 100)) { 
+        dispatch(
+          setNotification({
+            message: 'Juego finalizado',
+            style: 'win',
+          }),
+        )
+      } else {
+        dispatch(
+          setNotification({
+            message: 'Juego finalizado',
+            style: 'lose',
+          }),
+        )
+      }
       navigate('/scores')
     } else {
       setNumberQuestion(prev => prev + 1)
@@ -95,14 +106,7 @@ const Game = () => {
 
   return (
     <div className='game__container'>
-      <h2 className='game__title'>A jugar {player.name}!</h2>
-      
-      <div>
-        <p>Tiempo restante: {timer} segundos</p>
-        <p>Tu marcador es: {score}</p>
-      </div>
 
-      <p>Pregunta número: {numberQuestion}</p>
       <p className='question'>{currentQuestion.ask}</p>
 
       <div className='answer__container'>
@@ -124,6 +128,9 @@ const Game = () => {
       <button onClick={handleConfirmAnswer} disabled={!selectedAnswer}>
         Confirmar Respuesta
       </button>
+
+      <img className='game__logo' src={logo} /> 
+      <img className='game__background' src={back} />
     </div>
   )
 }
