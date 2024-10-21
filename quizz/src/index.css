@@ -114,7 +114,7 @@ body {
   margin: 0; 
   padding: 0;
   color: var(--with-color);
-  font-family: Biennale;
+  font-family: Biennale, Tahoma, Verdana;
   padding-bottom: 30%;
 }
 
