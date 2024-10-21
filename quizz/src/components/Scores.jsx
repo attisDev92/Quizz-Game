@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { getAllPlayersService } from '../services'
 import logo from '../assets/Logo.png'
 import back from '../assets/back_question.png'
+import { Link } from 'react-router-dom'
 
 const Scores = () => {
   const [players, setPlayers] = useState([])
@@ -27,7 +28,9 @@ const Scores = () => {
 
   return (
     <div className='scores'>
-      <img src={logo} />
+      <Link to='/'>
+        <img src={logo} />
+      </Link>
       <h2>TOP RESULTADOS</h2>
       <div className='container__table'>
         <table>

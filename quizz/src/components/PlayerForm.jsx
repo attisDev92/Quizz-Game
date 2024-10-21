@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux'
 import { useField } from '../hooks/useField'
 import { createPlayer } from '../redux/playerReducer'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { setNotification } from '../redux/notificationReducer'
 import { timeNotification } from '../config/globalVar'
 import logo from '../assets/Logo.png'
@@ -43,7 +43,9 @@ const PlayerForm = () => {
       <input id='email' {...email.input} placeholder='E-mail'/>
       <br />
       <button type='submit'>Iniciar partida</button>
-      <img src={logo} />
+      <Link to='/'>
+        <img src={logo} />
+      </Link>
     </form>
   )
 }
