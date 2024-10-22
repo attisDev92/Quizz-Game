@@ -24,7 +24,6 @@ const notificationReducer = createSlice({
 export const { activeNotification, desactiveNotification } =
   notificationReducer.actions
 
-//style options: warning, error, success
 export const setNotification = (message, style) => {
   return dispatch => {
     dispatch(activeNotification(message, style))

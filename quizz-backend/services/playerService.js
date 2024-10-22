@@ -24,14 +24,12 @@ export const registerPlayer = async (req, res) => {
 export const updateScore = async (req, res) => {
   const { score } = req.body
   const { id } = req.params
-
   try {
     const player = await Player.findById(id)
 
     if (!player) {
       return res.status(404).json({ error: 'Usuario no existe' })
     }
-
     player.score = score
     await player.save()
     res.status(200).json(player)

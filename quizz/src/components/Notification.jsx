@@ -1,60 +1,39 @@
+import React, { useEffect, useRef, memo } from 'react'
 import { useSelector } from 'react-redux'
 import back_notification from '../assets/back_notification.png'
-import error_notification from '../assets/bad_notification.png'
+import error_notification from '../assets/error_notification.png'
 
-const Notification = () => {
+
+const preloadImages = () => {
+  const images = [back_notification, error_notification]
+  images.forEach(image => {
+    const img = new Image()
+    img.src = image
+  })
+}
+
+preloadImages()
+
+const Notification = memo(() => {
   const notification = useSelector(state => state.notification)
 
-  if (!notification.active) {
-    return null
-  }
-  console.log(notification)
-
-  const NotificationContent = () => { 
-    if (notification.style === 'time out') {
-      return (
-        <div className='notification_content'>
-          <p>Se te acabó el tiempo</p>
-          <img src={error_notification} />
-        </div>
-      )
-    } else if (notification.style === 'success') {
-      return (
-        <div className='notification_content'>
-          <p>{notification.message}</p>
-          <img src={back_notification} />
-        </div>
-      )
-    } else if (notification.style === 'error') {
-      return (
-        <div className='notification_content'>
-          <p>{notification.message}</p>
-          <img src={error_notification} />
-        </div>
-      )
-    } else if (notification.style === 'win') {
-      return (
-        <div className='notification_content'>
-          <p>GANASTE!</p>
-          <img src={back_notification} />
-        </div>
-      )
-    } else if (notification.style === 'lose') {
-      return (
-        <div className='notification_content'>
-          <p>SIGUE <br/> INTENTANDO</p>
-          <img src={error_notification} />
-        </div>
-      )
-    } 
-  }
-  
+  if (!notification.active) return null
 
   return (
     <div className='notification'>
-        {NotificationContent()}
+      <div className='notification_content'>
+        <p>{notification.message}</p>
+        <img
+          src={
+            notification.style === 'success' || notification.style === 'win' || notification.style === 'star'
+              ? back_notification
+              : error_notification
+          }
+          alt={notification.style}
+        />
+      </div>
     </div>
   )
-}
+})
 
 export default Notification

@@ -5,6 +5,8 @@ import PlayerForm from './components/PlayerForm'
 import Notification from './components/Notification'
 import backgroundIMG from './assets/background.png'
 import Start from './components/Start'
+import FullScreenButton from './components/FullscreenButton'
+import MusicPlayer from './components/MusicPlayer'
 const App = () => {
   return (
     <>
@@ -22,9 +24,11 @@ const App = () => {
         <Link to='/scores'>Resultados</Link>
       </nav>
 
+      <FullScreenButton />
       <div className='background'>
         <img src={backgroundIMG} />
       </div>
+      <MusicPlayer />
     </>
   )
 }

@@ -13,6 +13,8 @@ export const createNewPlayerService = async newPlayer => {
 }
 
 export const updateScoreService = async (id, score) => {
-  const response = await axios.put(`${baseURL}/players/score/${id}`, score)
+  console.log(score)
+  const response = await axios.put(`${baseURL}/players/score/${id}`, {score})
+  console.log(response.data)
   return response.data
 }
