@@ -25,7 +25,7 @@ const Notification = memo(() => {
         <p>{notification.message}</p>
         <img
           src={
-            notification.style === 'success' || notification.style === 'win' || notification.style === 'star'
+            notification.style === 'success' || notification.style === 'win' || notification.style === 'start'
               ? back_notification
               : error_notification
           }
