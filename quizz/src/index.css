@@ -116,6 +116,7 @@ body {
   color: var(--with-color);
   font-family: Biennale, Tahoma, Verdana;
   padding-bottom: 30%;
+  overflow: hidden;
 }
 
 /* background */
@@ -220,7 +221,7 @@ button:hover {
 
 .form img {
   width: 70%;
-  margin: 3rem;
+  margin: auto;
 }
 
 /* game */

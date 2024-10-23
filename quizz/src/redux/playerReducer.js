@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { createNewPlayerService, updateScoreService } from '../services'
+import { updatePlayer } from './playersReducer'
 
 const playerReducer = createSlice({
   name: 'player',
@@ -22,14 +23,16 @@ export const { setPlayer, changeScore, resetPlayer } = playerReducer.actions
 export const createPlayer = newPlayer => {
   return async dispatch => {
     const response = await createNewPlayerService(newPlayer)
+    dispatch(updatePlayer(response))
     dispatch(setPlayer(response))
   }
 }
 
 export const updatePlayerScore = (id, score) => {
   return async dispatch => {
-    await updateScoreService(id, score)
+    const player = await updateScoreService(id, score)
     dispatch(changeScore(score))
+    dispatch(updatePlayer(player))
   }
 }
 

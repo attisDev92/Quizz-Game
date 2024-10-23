@@ -4,7 +4,7 @@
     "answers": [
       { "res": "Ministerio de Economía y Finanzas", "correct": false },
       {"res": "Agencia Nacional de Regulación y Control del Transporte", "correct": false },
-      {"res": "Agencia de Regulación y Control de las Telecomunicaciones (ARCOTEL)", "correct": true },
+      {"res": "Agencia de Regulación y Control de las Telecomunicaciones (ARCOTEL)", "correct": true},
       {"res": "Superintendencia de Bancos", "correct": false }
       
     ]

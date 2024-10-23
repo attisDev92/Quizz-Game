@@ -1,26 +1,16 @@
-import { useEffect, useState } from 'react'
-import { getAllPlayersService } from '../services'
 import logo from '../assets/Logo.png'
 import back from '../assets/back_question.png'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { resetScore } from '../redux/score'
 
 const Scores = () => {
-  const [players, setPlayers] = useState([])
-  const player = useSelector(state => state.player)
+  const dispatch = useDispatch()
+  const players = useSelector(state => state.players)
 
   useEffect(() => {
-    const fetchScores = async () => {
-      try {
-        const data = await getAllPlayersService()
-        const playersUpdated = data.map(e => e.id === player.id ? player : e)
-        setPlayers(playersUpdated)
-      } catch (error) {
-        console.error(error)
-      }
-    }
-
-    fetchScores()
+    dispatch(resetScore())
   }, [])
 
   if (!players) {

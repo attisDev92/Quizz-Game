@@ -8,16 +8,17 @@ import { maxNumberQuestions, timeLimit, timeNotification } from '../config/globa
 import { changeMusic, endGameMusic, setMusic } from '../redux/musicReducer'
 import logo from '../assets/Logo.png'
 import back from '../assets/back_question.png'
+import { plusScore, resetScore } from '../redux/score'
 
 const Game = () => {
+  const {questions} = useSetQuestions()
+  const dispatch = useDispatch()
   const navigate = useNavigate()
   const player = useSelector(state => state.player)
-  const dispatch = useDispatch()
-  const {questions} = useSetQuestions()
+  const score = useSelector(state => state.score)
   const [numberQuestion, setNumberQuestion] = useState(1)
   const [selectedAnswer, setSelectedAnswer] = useState(null)
   const [_timer, setTimer] = useState(timeLimit)
-  const [score, setScore] = useState(0)
 
   useEffect(() => {
     dispatch(setMusic('start'))
@@ -50,14 +51,16 @@ const Game = () => {
     return () => clearInterval(timerId)
   }, [numberQuestion])
 
+
+
   const handleNextQuestion = () => {
     if (numberQuestion === maxNumberQuestions) {
       dispatch(updatePlayerScore(player.id, score))
-      if (score === (maxNumberQuestions * 100)) { 
+      if (score === 300) { 
         dispatch(endGameMusic('win'))
         dispatch(
           setNotification({
-            message: 'Ganaste!',
+            message: 'Felicidades Ganaste!',
             style: 'win',
           }),
         )
@@ -65,14 +68,17 @@ const Game = () => {
         dispatch(endGameMusic('lose'))
         dispatch(
           setNotification({
-            message: 'Sigue intentando!',
+            message: 'Suerte para la próxima, sigue intentando!',
             style: 'lose',
           }),
         )
       }
+      setTimeout(() => {
+        dispatch(resetScore())
+      }, timeNotification)
       navigate('/scores')
     } else {
-      setNumberQuestion(prev => prev + 1)
+      setNumberQuestion(numberQuestion + 1)
       setSelectedAnswer(null)
       setTimer(timeLimit)
     }
@@ -83,7 +89,9 @@ const Game = () => {
     const correctAnswer = currentQuestion.answers.find(ans => ans.correct)
 
     if (selectedAnswer === correctAnswer.res) {
-      setScore(prevScore => prevScore + 100)
+      console.log(numberQuestion)
+      dispatch(plusScore())
+      console.log(score)
       dispatch(changeMusic('success'))
       dispatch(
         setNotification({
@@ -143,7 +151,7 @@ const Game = () => {
       <button onClick={handleConfirmAnswer} disabled={!selectedAnswer}>
         Confirmar Respuesta
       </button>
-
+    
       <img className='game__logo' src={logo} /> 
       <img className='game__background' src={back} />
     </div>

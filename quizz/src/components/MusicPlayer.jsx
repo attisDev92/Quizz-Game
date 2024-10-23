@@ -6,7 +6,6 @@ const MusicPlayer = () => {
   const sound = useRef(null)
   const music = useSelector(state => state.music)
   const [isPlaying, setIsPlaying] = useState(false)
-  console.log(music)
 
   const musicMap =  {
     default: '/musica1.mp3', 
@@ -42,10 +41,8 @@ const MusicPlayer = () => {
       // Reproducir o pausar según el estado isPlaying
       if (isPlaying) {
         newSound.play();
-        console.log('play')
       } else {
         newSound.pause();
-        console.log('pause')
       }
     }
 

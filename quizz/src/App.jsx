@@ -7,7 +7,18 @@ import backgroundIMG from './assets/background.png'
 import Start from './components/Start'
 import FullScreenButton from './components/FullscreenButton'
 import MusicPlayer from './components/MusicPlayer'
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { fetchInitialPlayers } from './redux/playersReducer'
+
 const App = () => {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(fetchInitialPlayers())
+  }, [dispatch])
+
+
   return (
     <>
       <Notification />

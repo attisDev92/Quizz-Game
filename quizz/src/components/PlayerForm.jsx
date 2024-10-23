@@ -21,6 +21,8 @@ const PlayerForm = () => {
     dispatch(setMusic('default'))
   }, [])
 
+
+
   const handleOnSubmit = event => {
     event.preventDefault()
     setIsLoading(true)
@@ -63,7 +65,7 @@ const PlayerForm = () => {
         <button type='submit'>Iniciar partida</button>
         <Link to='/'>
           <img src={logo} />
-        </Link>
+        </Link>       
       </form>
     </>
   )

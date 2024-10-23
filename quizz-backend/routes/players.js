@@ -1,14 +1,14 @@
 import express from 'express'
 import {
   registerPlayer,
-  getScores,
+  getPlayers,
   updateScore,
 } from '../services/playerService.js'
 
 const router = express.Router()
 
 router.post('/', registerPlayer)
-router.get('/', getScores)
+router.get('/', getPlayers)
 router.put('/score/:id', updateScore)
 
 export default router
