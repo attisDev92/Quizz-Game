@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit"
 
 const scoreReducer = createSlice({
   name: 'score',
-  initialState: 100,
+  initialState: 0,
   reducers: {
     plusScore (state) {
       const newScore = state + 100
