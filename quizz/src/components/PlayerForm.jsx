@@ -43,7 +43,8 @@ const PlayerForm = () => {
         setTimeout(() => {
           navigate('/new_game')
         }, timeNotification)
-      }).catch(() => {
+      }).catch((error) => {
+        console.log(error)
         setIsLoading(false)
       })
       

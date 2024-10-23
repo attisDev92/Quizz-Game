@@ -9,7 +9,7 @@ export const useSetQuestions = () => {
   useEffect(() => {
     const getRandomQuestions = () => {
       const questionsShuffle = [...questionsDataBase].sort(
-        () => 0.3 - Math.random(),
+        () => 0.5 - Math.random(),
       )
       return questionsShuffle.slice(0, maxNumberQuestions)
     }

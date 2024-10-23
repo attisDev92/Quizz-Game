@@ -89,9 +89,7 @@ const Game = () => {
     const correctAnswer = currentQuestion.answers.find(ans => ans.correct)
 
     if (selectedAnswer === correctAnswer.res) {
-      console.log(numberQuestion)
       dispatch(plusScore())
-      console.log(score)
       dispatch(changeMusic('success'))
       dispatch(
         setNotification({
@@ -132,18 +130,18 @@ const Game = () => {
       <p className='question'>{currentQuestion.ask}</p>
 
       <div className='answer__container'>
-        {currentQuestion.answers.map((answer, index) => (
+        {currentQuestion.answers.map((answer, i) => (
           <>
             <input
-              key={index}
+              key={i}
               type='radio'
-              id={`answer-${index}`}
+              id={`answer-${i}`}
               name='answer'
               value={answer.res}
               checked={selectedAnswer === answer.res}
               onChange={() => setSelectedAnswer(answer.res)}
             />
-            <label htmlFor={`answer-${index}`}>{answer.res}</label>
+            <label key={`answer-${i}`} htmlFor={`answer-${i}`}>{answer.res}</label>
           </>
         ))}
       </div>

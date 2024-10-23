@@ -1,11 +1,18 @@
 import Player from '../models/Player.js'
 
 export const registerPlayer = async (req, res) => {
-
+  const {email} = req.body
   try {
+    const playerExist = await Player.findOne({email})
+
+    if( playerExist ) {
+      return res.status(200).json(playerExist)
+    }
+
     const newPlayer = new Player({
       ...req.body,
     })
+
     await newPlayer.save()
     res.status(201).json(newPlayer)
   } catch (error) {

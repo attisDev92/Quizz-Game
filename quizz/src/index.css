@@ -1,103 +1,103 @@
 @import url(reset.css);
 @font-face {
   font-family: Biennale;
-  src: url('../public/fonts/Biennale\ Black.otf') format('opentype');
+  src: url('/fonts/Biennale\ Black.otf') format('opentype');
   font-weight: 900;
   font-style: normal;
 }
 @font-face {
   font-family: Biennale;
-  src: url('../public/fonts/Biennale\ Black\ It.otf') format('opentype');
+  src: url('/fonts/Biennale\ Black\ It.otf') format('opentype');
   font-weight: 900;
   font-style: italic;
 }
 @font-face {
   font-family: Biennale;
-  src: url('../public/fonts/Biennale\ Bold.otf') format('opentype');
+  src: url('/fonts/Biennale\ Bold.otf') format('opentype');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: Biennale;
-  src: url('../public/fonts/Biennale\ Book.otf') format('opentype');
+  src: url('/fonts/Biennale\ Book.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: Biennale;
-  src: url('../public/fonts/Biennale\ Book\ It.otf') format('opentype');
+  src: url('/fonts/Biennale\ Book\ It.otf') format('opentype');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: Biennale;
-  src: url('../public/fonts/Biennale\ Hair.otf') format('opentype');
+  src: url('/fonts/Biennale\ Hair.otf') format('opentype');
   font-weight: 100;
   font-style: normal;
 }
 @font-face {
   font-family: Biennale;
-  src: url('../public/fonts/Biennale\ Hair\ It.otf') format('opentype');
+  src: url('/fonts/Biennale\ Hair\ It.otf') format('opentype');
   font-weight: 100;
   font-style: italic;
 }
 @font-face {
   font-family: Biennale;
-  src: url('../public/fonts/Biennale\ Heavy.otf') format('opentype');
+  src: url('/fonts/Biennale\ Heavy.otf') format('opentype');
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: Biennale;
-  src: url('../public/fonts/Biennale\ Heavy\ It.otf') format('opentype');
+  src: url('/fonts/Biennale\ Heavy\ It.otf') format('opentype');
   font-weight: 600;
   font-style: italic;
 }
 @font-face {
   font-family: Biennale;
-  src: url('../public/fonts/Biennale\ Light.otf') format('opentype');
+  src: url('/fonts/Biennale\ Light.otf') format('opentype');
   font-weight: 200;
   font-style: normal;
 }
 @font-face {
   font-family: Biennale;
-  src: url('../public/fonts/Biennale\ Light\ It.otf') format('opentype');
+  src: url('/fonts/Biennale\ Light\ It.otf') format('opentype');
   font-weight: 200;
   font-style: italic;
 }
 @font-face {
   font-family: Biennale;
-  src: url('../public/fonts/Biennale\ Medium.otf') format('opentype');
+  src: url('/fonts/Biennale\ Medium.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: Biennale;
-  src: url('../public/fonts/Biennale\ Medium\ It.otf') format('opentype');
+  src: url('/fonts/Biennale\ Medium\ It.otf') format('opentype');
   font-weight: 500;
   font-style: italic;
 }
 @font-face {
   font-family: Biennale;
-  src: url('../public/fonts/Biennale\ Regular.otf') format('opentype');
+  src: url('/fonts/Biennale\ Regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: Biennale;
-  src: url('../public/fonts/Biennale\ Regular\ It.otf') format('opentype');
+  src: url('/fonts/Biennale\ Regular\ It.otf') format('opentype');
   font-weight: 400;
   font-style: italic;
 }
 @font-face {
   font-family: Biennale;
-  src: url('../public/fonts/Biennale\ SemiBold.otf') format('opentype');
+  src: url('/fonts/Biennale\ SemiBold.otf') format('opentype');
   font-weight: 800;
   font-style: normal;
 }
 @font-face {
   font-family: Biennale;
-  src: url('../public/fonts/Biennale\ SemiBold\ It.otf') format('opentype');
+  src: url('/fonts/Biennale\ SemiBold\ It.otf') format('opentype');
   font-weight: 800;
   font-style: italic;
 }
