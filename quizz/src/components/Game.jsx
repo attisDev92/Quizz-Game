@@ -2,20 +2,18 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { setNotification } from '../redux/notificationReducer'
-import { updatePlayerScore } from '../redux/playerReducer'
 import { useSetQuestions } from '../hooks/useQuestions'
 import { maxNumberQuestions, timeLimit, timeNotification } from '../config/globalVar'
-import { changeMusic, endGameMusic, setMusic } from '../redux/musicReducer'
+import { changeMusic, setMusic } from '../redux/musicReducer'
 import logo from '../assets/Logo.png'
 import back from '../assets/back_question.png'
-import { plusScore, resetScore } from '../redux/score'
+import { plusScore } from '../redux/playerReducer'
 
 const Game = () => {
   const {questions} = useSetQuestions()
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const player = useSelector(state => state.player)
-  const score = useSelector(state => state.score)
   const [numberQuestion, setNumberQuestion] = useState(1)
   const [selectedAnswer, setSelectedAnswer] = useState(null)
   const [_timer, setTimer] = useState(timeLimit)
@@ -23,7 +21,7 @@ const Game = () => {
   useEffect(() => {
     dispatch(setMusic('start'))
     dispatch(setNotification({
-      message: 'A jugar!',
+      message: `A jugar! ${player.nickname}`,
       style: 'start'
     }))
   },[])
@@ -51,32 +49,9 @@ const Game = () => {
     return () => clearInterval(timerId)
   }, [numberQuestion])
 
-
-
-  const handleNextQuestion = () => {
+  const handleNextQuestion = async() => {
     if (numberQuestion === maxNumberQuestions) {
-      dispatch(updatePlayerScore(player.id, score))
-      if (score === 300) { 
-        dispatch(endGameMusic('win'))
-        dispatch(
-          setNotification({
-            message: 'Felicidades Ganaste!',
-            style: 'win',
-          }),
-        )
-      } else {
-        dispatch(endGameMusic('lose'))
-        dispatch(
-          setNotification({
-            message: 'Suerte para la próxima, sigue intentando!',
-            style: 'lose',
-          }),
-        )
-      }
-      setTimeout(() => {
-        dispatch(resetScore())
-      }, timeNotification)
-      navigate('/scores')
+      navigate('/result')
     } else {
       setNumberQuestion(numberQuestion + 1)
       setSelectedAnswer(null)
@@ -89,8 +64,8 @@ const Game = () => {
     const correctAnswer = currentQuestion.answers.find(ans => ans.correct)
 
     if (selectedAnswer === correctAnswer.res) {
-      dispatch(plusScore())
       dispatch(changeMusic('success'))
+      dispatch(plusScore())
       dispatch(
         setNotification({
           message: 'CORRECTO!',
@@ -114,12 +89,12 @@ const Game = () => {
     }
   }
 
-  if (!player) {
-    return navigate('/new_player')
+  if (!player.nickname) {
+    navigate('/new_player')
   }
 
   if (questions.length === 0) {
-    return <>...Loading</>
+    return <>...loading</>
   }
 
   const currentQuestion = questions[numberQuestion - 1]

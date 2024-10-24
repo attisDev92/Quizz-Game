@@ -1,16 +1,24 @@
 import logo from '../assets/Logo.png'
 import back from '../assets/back_question.png'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { resetPlayer } from '../redux/playerReducer'
+import { setMusic } from '../redux/musicReducer'
 
 const Scores = () => {
-  const initialPlayers = useSelector(state => state.players)
+  const initialPlayers = useSelector(state => state.scores)
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(setMusic('default'))
+    dispatch(resetPlayer())
+  }, [])
 
   if (!initialPlayers) {
     return <>No hay resultados disponibles</>
   }
 
-  const playersScore = initialPlayers.filter(player => player.score > 100).sort((a, b) => b.score - a.score).slice(0, 10)
+  const playersScore = initialPlayers.slice(0, 20)
 
   return (
     <div className='scores'>
@@ -24,7 +32,7 @@ const Scores = () => {
           {playersScore.map((player, i) => (
             <tr key={player.id}>
               <td>{i + 1}</td>
-              <td>{player.name}</td>
+              <td>{player.nickname}</td>
               <td>{player.score}</td>
             </tr>
           ))}

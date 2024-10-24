@@ -1,22 +1,12 @@
 import { Schema, model } from 'mongoose'
 
 const playerSchema = new Schema({
-  name: {
+  nickname: {
     type: 'String',
-    minLength: 5,
     required: true,
-  },
-  phone: {
-    type: 'String',
-    default: '',
-  },
-  email: {
-    type: 'String',
-    default: '',
   },
   score: {
     type: 'Number',
-    min: 0,
     default: 0,
   },
 })

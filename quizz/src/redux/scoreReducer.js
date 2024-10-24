@@ -1,17 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { getAllPlayersService } from "../services"
+import { getAllPlayers } from "../services"
 
-const playersReducers  = createSlice({
-  name: 'players',
+const scoresReducer = createSlice({
+  name: 'scores',
   initialState: [],
   reducers: {
-    setPlayers(_state, action) {
-      return action.payload.sort()
+    setInitialPlayers (_state, action) {
+      return action.payload.sort((a, b) => a - b)
     },
-    updatePlayer(state, action) {
-      const playerToUpdate = action.payload;
+    updatePlayer (state, action) {
+      const playerToUpdate = action.payload
       const existingIndex = state.findIndex((player) => player.id === playerToUpdate.id);
-
       if (existingIndex !== -1) {
         return [...state.slice(0, existingIndex), playerToUpdate, ...state.slice(existingIndex + 1)].sort((a, b) => b.score - a.score)
       } else {
@@ -21,13 +20,13 @@ const playersReducers  = createSlice({
   }
 })
 
-export const { setPlayers, updatePlayer } = playersReducers.actions
+export const {setInitialPlayers, updatePlayer} = scoresReducer.actions
 
-export const fetchInitialPlayers = () => {
+export const fetchPlayers = () => {
   return async dispatch => {
-    const players = await getAllPlayersService()
-    dispatch(setPlayers(players))
+    const players = await getAllPlayers()
+    dispatch(setInitialPlayers(players))
   }
 }
 
-export default playersReducers.reducer
+export default scoresReducer.reducer

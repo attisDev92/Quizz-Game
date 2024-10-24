@@ -135,11 +135,20 @@ body {
 .background img {
   width: 100%;
   object-fit: cover;
+  margin: 30%;
 }
 
 /* Inicio */
+.inicio {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  margin-block-start: 25%;
+}
+
 .inicio h1 {
-  margin: 50% auto 10%;
   width: 100%;
   text-align: center;
   text-shadow: black 2px 2px;
@@ -147,13 +156,33 @@ body {
   font-size: 6rem;
 }
 
-.inicio img {
+.logo__index {
   width: 50%;
   margin: auto;
 }
 
-/* menu */
+.inicio p {
+  font-size: 2rem;
 
+}
+
+.qr__container {
+  display: grid;
+  padding: 10%;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  justify-items: center;
+  align-items: end;
+}
+
+
+.qr__img {
+  height: 20rem;
+  aspect-ratio: 1 / 1;
+  width: auto;
+}
+
+/* menu */
 .menu {
   display: flex;
   flex-flow: row nowrap;
@@ -436,4 +465,32 @@ button:hover {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg);
  };
+}
+
+/* Result */
+.result__container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  padding: 60% 10% 10%;
+  align-items: center;
+}
+
+.result__container img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.result__container h1 {
+  text-align: center;
+  font-size: 6rem;
+  font-weight: 700;
+}
+
+.result__container p {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 500;
 }

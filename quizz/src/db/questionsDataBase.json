@@ -6,7 +6,6 @@
       {"res": "Agencia Nacional de Regulación y Control del Transporte", "correct": false },
       {"res": "Agencia de Regulación y Control de las Telecomunicaciones (ARCOTEL)", "correct": true},
       {"res": "Superintendencia de Bancos", "correct": false }
-      
     ]
   },
   {
@@ -22,11 +21,10 @@
   {
     "ask": "¿Qué empresa ofrece el servicio de validación cualificada de firmas electrónicas en Ecuador?",
     "answers": [
-      {"res": "Google", "correct": false },
       {"res": "ANF Autoridad de Certificación (ANF AC)", "correct": true },
+      {"res": "Google", "correct": false },
       {"res": "Amazon", "correct": false },
       {"res": "Facebook", "correct": false }
-
     ]
   },
   {
@@ -50,8 +48,8 @@
   {
     "ask": "¿Cuál de los siguientes es un beneficio de usar una firma electrónica cualificada en Ecuador?",
     "answers": [
-      {"res": "Aumenta el tamaño del archivo", "correct": false }, 
       {"res": "Garantiza la autenticidad y seguridad jurídica del documento", "correct": true }, 
+      {"res": "Aumenta el tamaño del archivo", "correct": false }, 
       {"res": "Evita que los documentos se puedan leer", "correct": false }, 
       {"res": "Elimina la necesidad de cifrar la información", "correct": false }
     ]
@@ -60,9 +58,9 @@
     "ask": "¿Qué documento proporciona ANF AC como prueba de la validación de una firma electrónica?",
     "answers": [
       {"res": "Factura", "correct": false},
-      {"res": "Informe de Validación", "correct": true},
       {"res": "Certificado de Nacimiento", "correct": false},
-      {"res": "Informe de Encriptación", "correct": false}
+      {"res": "Informe de Encriptación", "correct": false},
+      {"res": "Informe de Validación", "correct": true}
     ]
   },
   {

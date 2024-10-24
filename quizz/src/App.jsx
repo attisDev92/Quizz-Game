@@ -7,25 +7,27 @@ import backgroundIMG from './assets/background.png'
 import Start from './components/Start'
 import FullScreenButton from './components/FullscreenButton'
 import MusicPlayer from './components/MusicPlayer'
-import { useEffect } from 'react'
+import Result from './components/Result'
 import { useDispatch } from 'react-redux'
-import { fetchInitialPlayers } from './redux/playersReducer'
+import { useEffect } from 'react'
+import { fetchPlayers } from './redux/scoreReducer'
 
 const App = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(fetchInitialPlayers())
-  }, [dispatch])
-
+    dispatch(fetchPlayers())
+  },[dispatch])
 
   return (
     <>
       <Notification />
+
       <Routes>
         <Route path='/scores' element={<Scores />} />
         <Route path='/new_game' element={<Game />} />
         <Route path='/new_player' element={<PlayerForm />} />
+        <Route path='/result' element={<Result />} />
         <Route path='/' element={<Start />} />
       </Routes>
 

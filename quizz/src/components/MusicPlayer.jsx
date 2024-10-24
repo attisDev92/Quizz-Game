@@ -30,7 +30,7 @@ const MusicPlayer = () => {
         autoplay: true,
         onend: () => {
           // Reproducir la siguiente música según el estado de la notificación
-          const nextMusic = musicMap[music] || 'musica2.mp3';
+          const nextMusic = musicMap[music] || 'musica1.mp3';
           newSound.load();
           newSound.play(nextMusic);
         }

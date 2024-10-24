@@ -26,7 +26,7 @@ export const endGameMusic = (music) => {
     dispatch(setMusic(music))
     setTimeout(() => {
       dispatch(setMusic('default'))
-    }, 3000)
+    }, 5000)
   }
 }
 

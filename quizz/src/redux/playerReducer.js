@@ -1,39 +1,25 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { createNewPlayerService, updateScoreService } from '../services'
-import { updatePlayer } from './playersReducer'
 
 const playerReducer = createSlice({
   name: 'player',
-  initialState: null,
+  initialState: {
+    nickname: '',
+    score: 0,
+  },
   reducers: {
-    setPlayer(_state, action) {
-      return action.payload
+    setPlayer(state, action) {
+      state.nickname = action.payload
+      state.score = 0
     },
-    changeScore(state, action) {
-      state.score = action.payload
+    resetPlayer(state) {
+      state.nickname= ''
+      state.score= 0
     },
-    resetPlayer() {
-      return null
+    plusScore(state) {
+      state.score = state.score + 100
     },
   },
 })
 
-export const { setPlayer, changeScore, resetPlayer } = playerReducer.actions
-
-export const createPlayer = newPlayer => {
-  return async dispatch => {
-    const response = await createNewPlayerService(newPlayer)
-    dispatch(updatePlayer(response))
-    dispatch(setPlayer(response))
-  }
-}
-
-export const updatePlayerScore = (id, score) => {
-  return async dispatch => {
-    const player = await updateScoreService(id, score)
-    dispatch(changeScore(score))
-    dispatch(updatePlayer(player))
-  }
-}
-
+export const {setPlayer, resetPlayer, plusScore} = playerReducer.actions
 export default playerReducer.reducer

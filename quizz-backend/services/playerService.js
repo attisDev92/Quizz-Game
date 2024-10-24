@@ -1,14 +1,16 @@
 import Player from '../models/Player.js'
 
 export const registerPlayer = async (req, res) => {
-  const {email} = req.body
+  const {nickname, score} =  req.body
   try {
-    const playerExist = await Player.findOne({email})
 
-    if( playerExist ) {
-      return res.status(200).json(playerExist)
+    const player = await Player.findOne({nickname})
+
+    if (player) {
+      player.score = score
+      player.save()
+      return res.status(201).json(player)
     }
-
     const newPlayer = new Player({
       ...req.body,
     })
@@ -18,23 +20,6 @@ export const registerPlayer = async (req, res) => {
   } catch (error) {
     console.log(error.message)
     res.status(500).json({ error: 'Error al registrar nuevo jugador', error })
-  }
-}
-
-export const updateScore = async (req, res) => {
-  const { score } = req.body
-  const { id } = req.params
-  try {
-    const player = await Player.findById(id)
-
-    if (!player) {
-      return res.status(404).json({ error: 'Usuario no existe' })
-    }
-    player.score = score
-    await player.save()
-    res.status(200).json(player)
-  } catch (error) {
-    res.status(500).json({ error: 'Error al guardar el puntaje' })
   }
 }
 
