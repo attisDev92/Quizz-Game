@@ -13,7 +13,6 @@ const Result = () => {
   const dispath = useDispatch()
   const navigate = useNavigate()
   const [result, setResult] = useState(null)
-  console.log(player)
   
   useEffect(() => {
     if (player.score === 300) {
@@ -23,21 +22,23 @@ const Result = () => {
       setResult('lose')
       dispath(setMusic('lose'))
     }
-  }, [])
 
-  const sendResults = async() => {
-    try {
-      const playerSaved = await createPlayer(player)
-      dispath(updatePlayer(playerSaved))
-      dispath(resetPlayer())
-      navigate('/scores')
-    } catch (error) {
-      console.error(error)
+    const sendResults = async() => {
+      try {
+        const playerSaved = await createPlayer(player)
+        console.log(playerSaved)
+        dispath(updatePlayer(playerSaved))
+      } catch (error) {
+        console.error(error)
+      }
     }
-  }
-  
-  setTimeout(() => {
+
     sendResults()
+  }, [])  
+
+  setTimeout(() => {
+    dispath(resetPlayer())
+    navigate('/scores')
   }, 7000)
 
   if(!player.nickname) {
