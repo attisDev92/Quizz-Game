@@ -23,21 +23,21 @@ const Result = () => {
       setResult('lose')
       dispath(setMusic('lose'))
     }
-  })
+  }, [])
 
   const sendResults = async() => {
     try {
       const playerSaved = await createPlayer(player)
       dispath(updatePlayer(playerSaved))
+      dispath(resetPlayer())
+      navigate('/scores')
     } catch (error) {
       console.error(error)
     }
   }
-
+  
   setTimeout(() => {
     sendResults()
-    navigate('/scores')
-    dispath(resetPlayer())
   }, 7000)
 
   if(!player.nickname) {
